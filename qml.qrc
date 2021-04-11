@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/МЕНЮ Измерения 1 страница.png</file>
+        <file>images/МЕНЮ Измерения 1 страница2.png</file>
+        <file>images/МЕНЮ Калибровка 1 страница.png</file>
+        <file>images/МЕНЮ Калибровка 1 страница2.png</file>
+        <file>images/МЕНЮ Калибровка 1 страница3.png</file>
+        <file>images/МЕНЮ Контроль качества 1 страница.png</file>
+        <file>images/МЕНЮ Контроль качества 1 страница2.png</file>
+        <file>images/МЕНЮ Кровь 2 страница.png</file>
+        <file>images/МЕНЮ Кровь 2 страница2.png</file>
+        <file>images/МЕНЮ Назад 2 страница.png</file>
+        <file>images/МЕНЮ Назад 2 страница2.png</file>
+        <file>images/МЕНЮ Ошибка 1 страница.png</file>
+        <file>images/МЕНЮ Ошибка 1 страница2.png</file>
+        <file>images/МЕНЮ Ошибка 1 страница3.png</file>
+        <file>images/МЕНЮ пустой шестиугольник 1 страница.png</file>
+        <file>images/МЕНЮ Разогрев 1 страница.png</file>
+        <file>images/МЕНЮ Разогрев 1 страница2.png</file>
+        <file>images/МЕНЮ Разогрев 1 страница3.png</file>
+        <file>images/МЕНЮ Результаты 1 страница.png</file>
+        <file>images/МЕНЮ Результаты 1 страница2.png</file>
+        <file>images/МЕНЮ Служебные 1 страница.png</file>
+        <file>images/МЕНЮ Служебные 1 страница2.png</file>
+        <file>images/МЕНЮ Стандарт 2 страница.png</file>
+        <file>images/МЕНЮ Стандарт 2 страница2.png</file>
+        <file>images/МЕНЮ Сыворотка 2 страница.png</file>
+        <file>images/МЕНЮ Сыворотка 2 страница2.png</file>
+        <file>images/МЕНЮ Часы 1 страница.png</file>
+        <file>images/МЕНЮ Часы 1 страница большая стрелка.png</file>
+        <file>images/МЕНЮ Часы 1 страница маленькая стрелка.png</file>
+    </qresource>
+</RCC>
