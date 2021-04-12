@@ -61,9 +61,9 @@ Window {
 
     function timeChanged() {
         var date = new Date();
-        hours = date.getHours();
-        minutes = date.getMinutes();
-        seconds = date.getSeconds();
+        hours = 0;//date.getHours();
+        minutes = 30;//date.getMinutes();
+        seconds = 45;//date.getSeconds();
     }
 
     function rec_range_color(){
@@ -345,7 +345,7 @@ Window {
             Rectangle {
                 id: circleClock
                 x: 97
-                y: 87
+                y: 86
                 width: 10
                 height: 10
                 radius: 5
@@ -414,6 +414,7 @@ Window {
                     anchors.fill: recB3Rec1
                     onClicked: {
                         console.log("Button 3333333 clicked.");
+                        stack.push(viewClock);
                     }
                 }
             }
@@ -2013,7 +2014,7 @@ Window {
                     anchors.fill: recB7Rec1Page2
                     onClicked: {
                         console.log("2.4");
-                        onClicked: stack.pop(mainView);
+                        stack.pop(mainView);
                     }
                 }
 
@@ -2126,5 +2127,96 @@ Window {
             }
 
         }
+    }
+
+    Page {
+        id: viewClock
+        visible: false
+
+        Rectangle {
+            id: recBackgraundClock
+            width: 600
+            height: 1024
+            color: "black"
+
+            Image {
+                id: imageBackgroundClock
+                anchors.centerIn: recBackgraundClock
+                source: "images/Часы в полный экран.png"
+
+                Rectangle {
+                    color: "red"
+                    x: 276
+                    y: 479
+                    z: 1
+                    width: 1
+                    height: 1
+                }
+
+                Image {
+                    id: imageBackgroundArrow1
+                    source: "images/Стрелка часы.png"
+                    x: 233
+                    y: 415
+                    width: 60
+                    height: 93
+
+                    transform: Rotation {
+                        id: hourRotationB
+                        angle: ((hours * 30)) - 28//+ (minutes * 0.5)
+                        origin.x: 0
+                        origin.y: 0
+                    }
+                }
+
+                Image {
+                    id: imageBackgroundArrow2
+                    //source: "images/Стрелка минута.png"
+                    x: 186
+                    y: 384
+                    width: 104
+                    height: 109
+
+                    transform: Rotation {
+                        id: minuteRotationB
+                        angle: (minutes * 6) + 43
+                        origin.x: 90
+                        origin.y: 95
+                    }
+
+                }
+
+                Rectangle {
+                    id: recBackgroundArrow3
+                    color: "white"
+                    x: 273
+                    y: 372
+                    width: 5
+                    height: 110
+                    radius: 5
+
+                    transform: Rotation {
+                        id: secondRotationB
+                        angle: seconds * 6
+                        origin.x: 3
+                        origin.y: 107
+                    }
+                }
+            }
+
+            MouseArea {
+                id: recClockBut1
+                anchors.fill: recBackgraundClock
+                onClicked: {
+                    stack.pop(mainView);
+                }
+            }
+
+        }
+    }
+
+    Page {
+        id: setLanguage
+        visible: false
     }
 }
