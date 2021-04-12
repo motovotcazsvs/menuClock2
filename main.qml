@@ -61,9 +61,9 @@ Window {
 
     function timeChanged() {
         var date = new Date();
-        hours = 0;//date.getHours();
-        minutes = 30;//date.getMinutes();
-        seconds = 45;//date.getSeconds();
+        hours = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
     }
 
     function rec_range_color(){
@@ -292,65 +292,67 @@ Window {
                 anchors.fill: recB2
                 anchors.margins: 1
                 source: "images/МЕНЮ Часы 1 страница.png"
-            }
 
-            Image {
-                id: imArrow1
-                x: 103 + clock_arrow_shift_x
-                y: 66 + clock_arrow_shift_y
-                width: 18
-                height: 26
-                source: "images/МЕНЮ Часы 1 страница маленькая стрелка.png"
+                Image {
+                    id: imArrow1
+                    x: 98
+                    y: 68
+                    width: 18
+                    height: 28
+                    source: "images/МЕНЮ Часы 1 страница маленькая стрелка.png"
 
-                transform: Rotation {
-                    id: hourRotation
-                    angle: ((hours * 30) - 33) + (minutes * 0.5)
-                    origin.x: 0
-                    origin.y: 26
+                    transform: Rotation {
+                        id: hourRotation
+                        angle: ((hours * 30) - 31) + (minutes * 0.5)
+                        origin.x: 3
+                        origin.y: 24
+                    }
                 }
-            }
 
-            Image {
-                id: imArrow2
-                x: 102 + clock_arrow_shift_x
-                y: 52 + clock_arrow_shift_y
-                width: 30
-                height: 40
+                Image {
+                    id: imArrow2
+                    x: 70
+                    y: 59
+                    width: 36
+                    height: 38
 
-                source: "images/МЕНЮ Часы 1 страница большая стрелка.png"
+                    source: "images/МЕНЮ Часы 1 страница большая стрелка.png"
 
-                transform: Rotation {
-                    id: minuteRotation
-                    angle: (minutes * 6) - 37
-                    origin.x: 0
-                    origin.y: 40
+                    transform: Rotation {
+                        id: minuteRotation
+                        angle: (minutes * 6) + 43
+                        origin.x: 31
+                        origin.y: 33
+                    }
                 }
-            }
 
-            Image {
-                id: imArrow3
-                x: 103 + clock_arrow_shift_x
-                y: 52 + clock_arrow_shift_y
-                width: 15
-                height: 40
-                source: "images/МЕНЮ Часы 1 страница большая стрелка.png"
-                transform: Rotation {
-                    id: secondRotation
-                    angle: (seconds * 6) - 20
-                    origin.x: 0
-                    origin.y: 40
+                Rectangle {
+                    id: recImArrow3
+                    color: "#818282"
+                    x: 100
+                    y: 53
+                    width: 2
+                    height: 40
+                    //radius: 2
+
+                    transform: Rotation {
+                        id: secondRotation
+                        angle: seconds * 6
+                        origin.x: 1
+                        origin.y: 39
+                    }
                 }
-            }
 
-            Rectangle {
-                id: circleClock
-                x: 97
-                y: 86
-                width: 10
-                height: 10
-                radius: 5
-                color: "#818282"
-                //color: "transparent"
+                Rectangle {
+                    //color: "red"
+                    color: "transparent"
+                    x: 101
+                    y: 92
+                    z: 1
+                    width: 1
+                    height: 1
+                }
+
             }
         }
 
@@ -2145,7 +2147,8 @@ Window {
                 source: "images/Часы в полный экран.png"
 
                 Rectangle {
-                    color: "red"
+                    //color: "red"
+                    color: "transparent"
                     x: 276
                     y: 479
                     z: 1
@@ -2156,32 +2159,32 @@ Window {
                 Image {
                     id: imageBackgroundArrow1
                     source: "images/Стрелка часы.png"
-                    x: 233
-                    y: 415
-                    width: 60
-                    height: 93
+                    x: 265
+                    y: 406
+                    width: 55
+                    height: 85
 
                     transform: Rotation {
                         id: hourRotationB
-                        angle: ((hours * 30)) - 28//+ (minutes * 0.5)
-                        origin.x: 0
-                        origin.y: 0
+                        angle: ((hours * 30) - 30) + (minutes * 0.5)
+                        origin.x: 11
+                        origin.y: 73
                     }
                 }
 
                 Image {
                     id: imageBackgroundArrow2
-                    //source: "images/Стрелка минута.png"
-                    x: 186
-                    y: 384
-                    width: 104
+                    source: "images/Стрелка минута.png"
+                    x: 186.5
+                    y: 383.5
+                    width: 103
                     height: 109
 
                     transform: Rotation {
                         id: minuteRotationB
                         angle: (minutes * 6) + 43
-                        origin.x: 90
-                        origin.y: 95
+                        origin.x: 89.5
+                        origin.y: 95.5
                     }
 
                 }

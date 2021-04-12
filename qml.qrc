@@ -28,10 +28,10 @@
         <file>images/МЕНЮ Сыворотка 2 страница.png</file>
         <file>images/МЕНЮ Сыворотка 2 страница2.png</file>
         <file>images/МЕНЮ Часы 1 страница.png</file>
+        <file>images/Часы в полный экран.png</file>
         <file>images/МЕНЮ Часы 1 страница большая стрелка.png</file>
         <file>images/МЕНЮ Часы 1 страница маленькая стрелка.png</file>
-        <file>images/Часы в полный экран.png</file>
-        <file>images/Стрелка часы.png</file>
         <file>images/Стрелка минута.png</file>
+        <file>images/Стрелка часы.png</file>
     </qresource>
 </RCC>
