@@ -50,8 +50,6 @@ Window {
     property int hours
     property int minutes
     property int seconds
-    property real clock_arrow_shift_x: 0
-    property real clock_arrow_shift_y: 0
 
     property real but_text_size: 15
     property bool rec_range_color_set: false
@@ -163,7 +161,7 @@ Window {
                     anchors.fill: recB1Rec1
                     onClicked: {
                         console.log("Button 11111111 clicked." + hours);
-                        stack.push(view2);
+                        stack.push(viewPage2);
                     }
                 }
 
@@ -210,7 +208,7 @@ Window {
                     anchors.fill: recB1Rec2
                     onClicked: {
                         console.log("Button 11111111 clicked.");
-                        stack.push(view2);
+                        stack.push(viewPage2);
                     }
                 }
             }
@@ -230,7 +228,7 @@ Window {
                     anchors.fill: recB1Rec3
                     onClicked: {
                         console.log("Button 11111111 clicked.");
-                        stack.push(view2);
+                        stack.push(viewPage2);
                     }
                 }
             }
@@ -250,7 +248,7 @@ Window {
                     anchors.fill: recB1Rec4
                     onClicked: {
                         console.log("Button 11111111 clicked.");
-                        stack.push(view2);
+                        stack.push(viewPage2);
                     }
                 }
             }
@@ -270,7 +268,7 @@ Window {
                     anchors.fill: recB1Rec5
                     onClicked: {
                         console.log("Button 11111111 clicked.");
-                        stack.push(view2);
+                        stack.push(viewPage2);
                     }
                 }
             }
@@ -1413,7 +1411,7 @@ Window {
                     anchors.fill: recB9Rec1
                     onClicked: {
                         console.log("Button 9999999 clicked.");
-                        stack.push(view2);
+                        stack.push(viewPage2);
                         Qt.quit();
                     }
                 }
@@ -1501,7 +1499,7 @@ Window {
         }
 
         Rectangle {
-            id: recB10
+            id: recLeftHexagon
             width: buttons_width / 4
             height: buttons_height / 4
             color: "transparent"
@@ -1511,15 +1509,15 @@ Window {
             //z: -1
 
             Image {
-                id: imBye10
-                anchors.fill: recB10
+                id: imLeftHexagon
+                anchors.fill: recLeftHexagon
                 anchors.margins: 1
                 source: "images/МЕНЮ пустой шестиугольник 1 страница.png"
             }
         }
 
         Rectangle {
-            id: recB11
+            id: recLowerHexagon
             width: buttons_width / 2
             height: buttons_height / 2
             color: "transparent"
@@ -1529,8 +1527,8 @@ Window {
             //z: -1
 
             Image {
-                id: imBye11
-                anchors.fill: recB11
+                id: imLowerHexagon
+                anchors.fill: recLowerHexagon
                 anchors.margins: 1
                 source: "images/МЕНЮ пустой шестиугольник 1 страница.png"
             }
@@ -1539,13 +1537,13 @@ Window {
     }
 
     Page {
-        id: view2
+        id: viewPage2
         visible: false
         //property real shiftXPage2: 0
         //property real shiftYPage2: 0
 
         Rectangle {
-            id: recB3Page2
+            id: recB10
             width: buttons_width
             height: buttons_height
             color: "transparent"
@@ -1554,16 +1552,16 @@ Window {
             y: ((recBut23Y + shiftYPage2) + clearances)
             z: -1
             Image {
-                id: imBye3Page2
-                anchors.fill: recB3Page2
+                id: imBye10
+                anchors.fill: recB10
                 anchors.margins: 1
-                source: (recB3But1Page2.pressed || recB3But2Page2.pressed || recB3But3Page2.pressed || recB3But4Page2.pressed || recB3But5Page2.pressed)
+                source: (recB10But1.pressed || recB10But2.pressed || recB10But3.pressed || recB10But4.pressed || recB10But5.pressed)
                     ? "images/МЕНЮ Кровь 2 страница2.png"
                     : "images/МЕНЮ Кровь 2 страница.png"
             }
 
             Rectangle {
-                id:recB3Rec1Page2
+                id:recB10Rec1
                 x: mouse_range1_x
                 y: mouse_range1_y
                 z: 1
@@ -1573,12 +1571,12 @@ Window {
                 border.color: rec_range_color()
 
                 Text {
-                    id: nameButton3Page2
-                    anchors.bottom: recB3Rec1Page2.bottom
+                    id: nameButton10
+                    anchors.bottom: recB10Rec1.bottom
                     anchors.bottomMargin: 10
-                    anchors.horizontalCenter: recB3Rec1Page2.horizontalCenter
+                    anchors.horizontalCenter: recB10Rec1.horizontalCenter
                     text: qsTr("КРОВЬ")
-                    color: (recB3But1Page2.pressed || recB3But2Page2.pressed || recB3But3Page2.pressed || recB3But4Page2.pressed || recB3But5Page2.pressed)
+                    color: (recB10But1.pressed || recB10But2.pressed || recB10But3.pressed || recB10But4.pressed || recB10But5.pressed)
                     ? "white"
                     : "#D82B2B"
                     font.family: "Helvetica"
@@ -1588,11 +1586,11 @@ Window {
                 }
 
                 DropShadow {
-                      id: shadowTextBut3Page2
-                      visible: (recB3But1Page2.pressed || recB3But2Page2.pressed || recB3But3Page2.pressed || recB3But4Page2.pressed || recB3But5Page2.pressed)
+                      id: shadowTextBut10
+                      visible: (recB10But1.pressed || recB10But2.pressed || recB10But3.pressed || recB10But4.pressed || recB10But5.pressed)
                                ? false : true
-                      anchors.fill: nameButton3Page2
-                      source: nameButton3Page2
+                      anchors.fill: nameButton10
+                      source: nameButton10
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -1600,8 +1598,8 @@ Window {
                 }
 
                 MouseArea {
-                    id: recB3But1Page2
-                    anchors.fill: recB3Rec1Page2
+                    id: recB10But1
+                    anchors.fill: recB10Rec1
                     onClicked: {
 
                         console.log("Button 2.1 clicked.");
@@ -1610,9 +1608,9 @@ Window {
             }
 
             Rectangle {
-                id:recB3Rec2Page2
-                anchors.horizontalCenter: recB3Rec1Page2.horizontalCenter
-                anchors.bottom: recB3Rec1Page2.top
+                id:recB10Rec2
+                anchors.horizontalCenter: recB10Rec1.horizontalCenter
+                anchors.bottom: recB10Rec1.top
                 z: 1
                 width: mouse_range2_width
                 height: mouse_range2_height
@@ -1620,8 +1618,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB3But2Page2
-                    anchors.fill: recB3Rec2Page2
+                    id: recB10But2
+                    anchors.fill: recB10Rec2
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.1 clicked.");
@@ -1630,9 +1628,9 @@ Window {
             }
 
             Rectangle {
-                id:recB3Rec3Page2
-                anchors.horizontalCenter: recB3Rec1Page2.horizontalCenter
-                anchors.top: recB3Rec1Page2.bottom
+                id:recB10Rec3
+                anchors.horizontalCenter: recB10Rec1.horizontalCenter
+                anchors.top: recB10Rec1.bottom
                 z: 1
                 width: mouse_range3_width
                 height: mouse_range3_height
@@ -1640,8 +1638,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB3But3Page2
-                    anchors.fill: recB3Rec3Page2
+                    id: recB10But3
+                    anchors.fill: recB10Rec3
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.1 clicked.");
@@ -1650,9 +1648,9 @@ Window {
             }
 
             Rectangle {
-                id:recB3Rec4Page2
-                anchors.bottom: recB3Rec2Page2.top
-                anchors.horizontalCenter: recB3Rec2Page2.horizontalCenter
+                id:recB10Rec4
+                anchors.bottom: recB10Rec2.top
+                anchors.horizontalCenter: recB10Rec2.horizontalCenter
                 z: 1
                 width: mouse_range4_width
                 height: mouse_range4_height
@@ -1660,8 +1658,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB3But4Page2
-                    anchors.fill: recB3Rec4Page2
+                    id: recB10But4
+                    anchors.fill: recB10Rec4
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.1 clicked.");
@@ -1670,9 +1668,9 @@ Window {
             }
 
             Rectangle {
-                id:recB3Rec5Page2
-                anchors.top: recB3Rec3Page2.bottom
-                anchors.horizontalCenter: recB3Rec3Page2.horizontalCenter
+                id:recB10Rec5
+                anchors.top: recB10Rec3.bottom
+                anchors.horizontalCenter: recB10Rec3.horizontalCenter
                 z: 1
                 width: mouse_range5_width
                 height: mouse_range5_height
@@ -1680,8 +1678,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB3But5Page2
-                    anchors.fill: recB3Rec5Page2
+                    id: recB10But5
+                    anchors.fill: recB10Rec5
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 333333 clicked.");
@@ -1692,7 +1690,7 @@ Window {
         }
 
         Rectangle {
-            id: recB4Page2
+            id: recB11
             width: buttons_width
             height: buttons_height
             color: "transparent"
@@ -1701,16 +1699,16 @@ Window {
             y: recBut45Y + shiftYPage2
             //z: -1
             Image {
-                id: imBye4Page2
-                anchors.fill: recB4Page2
+                id: imBye11
+                anchors.fill: recB11
                 anchors.margins: 1
-                source: (recB4But1Page2.pressed || recB4But2Page2.pressed || recB4But3Page2.pressed || recB4But4Page2.pressed || recB4But5Page2.pressed)
+                source: (recB11But1.pressed || recB11But2.pressed || recB11But3.pressed || recB11But4.pressed || recB11But5.pressed)
                     ? "images/МЕНЮ Сыворотка 2 страница2.png"
                     : "images/МЕНЮ Сыворотка 2 страница.png"
             }
 
             Rectangle {
-                id:recB4Rec1Page2
+                id:recB11Rec1
                 x: mouse_range1_x
                 y: mouse_range1_y
                 z: 1
@@ -1720,20 +1718,20 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB4But1Page2
-                    anchors.fill: recB4Rec1Page2
+                    id: recB11But1
+                    anchors.fill: recB11Rec1
                     onClicked: {
                         console.log("Button 4444 clicked.");
                     }
                 }
 
                 Text {
-                    id: nameButton4Page2
-                    anchors.bottom: recB4Rec1Page2.bottom
+                    id: nameButton11
+                    anchors.bottom: recB11Rec1.bottom
                     anchors.bottomMargin: 10
-                    anchors.horizontalCenter: recB4Rec1Page2.horizontalCenter
+                    anchors.horizontalCenter: recB11Rec1.horizontalCenter
                     text: qsTr("СЫВОРОТКА")
-                    color: (recB4But1Page2.pressed || recB4But2Page2.pressed || recB4But3Page2.pressed || recB4But4Page2.pressed || recB4But5Page2.pressed)
+                    color: (recB11But1.pressed || recB11But2.pressed || recB11But3.pressed || recB11But4.pressed || recB11But5.pressed)
                     ? "white"
                     : "#F4B12A"
                     font.family: "Helvetica"
@@ -1743,11 +1741,11 @@ Window {
                 }
 
                 DropShadow {
-                      id: shadowTextBut4Page2
-                      visible: (recB4But1Page2.pressed || recB4But2Page2.pressed || recB4But3Page2.pressed || recB4But4Page2.pressed || recB4But5Page2.pressed)
+                      id: shadowTextBut11
+                      visible: (recB11But1.pressed || recB11But2.pressed || recB11But3.pressed || recB11But4.pressed || recB11But5.pressed)
                              ? false : true
-                      anchors.fill: nameButton4Page2
-                      source: nameButton4Page2
+                      anchors.fill: nameButton11
+                      source: nameButton11
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -1756,9 +1754,9 @@ Window {
             }
 
             Rectangle {
-                id:recB4Rec2Page2
-                anchors.horizontalCenter: recB4Rec1Page2.horizontalCenter
-                anchors.bottom: recB4Rec1Page2.top
+                id:recB11Rec2
+                anchors.horizontalCenter: recB11Rec1.horizontalCenter
+                anchors.bottom: recB11Rec1.top
                 z: 1
                 width: mouse_range2_width
                 height: mouse_range2_height
@@ -1766,8 +1764,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB4But2Page2
-                    anchors.fill: recB4Rec2Page2
+                    id: recB11But2
+                    anchors.fill: recB11Rec2
                     onClicked: {
                         console.log("Button 2.2 clicked.");
                     }
@@ -1775,9 +1773,9 @@ Window {
             }
 
             Rectangle {
-                id:recB4Rec3Page2
-                anchors.horizontalCenter: recB4Rec1Page2.horizontalCenter
-                anchors.top: recB4Rec1Page2.bottom
+                id:recB11Rec3
+                anchors.horizontalCenter: recB11Rec1.horizontalCenter
+                anchors.top: recB11Rec1.bottom
                 z: 1
                 width: mouse_range3_width
                 height: mouse_range3_height
@@ -1785,8 +1783,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB4But3Page2
-                    anchors.fill: recB4Rec3Page2
+                    id: recB11But3
+                    anchors.fill: recB11Rec3
                     onClicked: {
                         console.log("Button 2.2 clicked.");
                     }
@@ -1794,9 +1792,9 @@ Window {
             }
 
             Rectangle {
-                id:recB4Rec4Page2
-                anchors.bottom: recB4Rec2Page2.top
-                anchors.horizontalCenter: recB4Rec2Page2.horizontalCenter
+                id:recB11Rec4
+                anchors.bottom: recB11Rec2.top
+                anchors.horizontalCenter: recB11Rec2.horizontalCenter
                 z: 1
                 width: mouse_range4_width
                 height: mouse_range4_height
@@ -1804,8 +1802,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB4But4Page2
-                    anchors.fill: recB4Rec4Page2
+                    id: recB11But4
+                    anchors.fill: recB11Rec4
                     onClicked: {
                         console.log("Button 2.2 clicked.");
                     }
@@ -1813,9 +1811,9 @@ Window {
             }
 
             Rectangle {
-                id:recB4Rec5Page2
-                anchors.top: recB4Rec3Page2.bottom
-                anchors.horizontalCenter: recB4Rec3Page2.horizontalCenter
+                id:recB11Rec5
+                anchors.top: recB11Rec3.bottom
+                anchors.horizontalCenter: recB11Rec3.horizontalCenter
                 z: 1
                 width: mouse_range5_width
                 height: mouse_range5_height
@@ -1823,8 +1821,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB4But5Page2
-                    anchors.fill: recB4Rec5Page2
+                    id: recB11But5
+                    anchors.fill: recB11Rec5
                     onClicked: {
                         console.log("Button 2.2 clicked.");
                     }
@@ -1834,7 +1832,7 @@ Window {
         }
 
         Rectangle {
-            id: recB5Page2
+            id: recB12
             width: buttons_width
             height: buttons_height
             color: "transparent"
@@ -1844,16 +1842,16 @@ Window {
             z: -1
 
             Image {
-                id: imBye5Page2
-                anchors.fill: recB5Page2
+                id: imBye12
+                anchors.fill: recB12
                 anchors.margins: 1
-                source: (recB5But1Page2.pressed || recB5But2Page2.pressed || recB5But3Page2.pressed || recB5But4Page2.pressed || recB5But5Page2.pressed)
+                source: (recB12But1.pressed || recB12But2.pressed || recB12But3.pressed || recB12But4.pressed || recB12But5.pressed)
                     ? "images/МЕНЮ Стандарт 2 страница2.png"
                     : "images/МЕНЮ Стандарт 2 страница.png"
             }
 
             Rectangle {
-                id:recB5Rec1Page2
+                id:recB12Rec1
                 x: mouse_range1_x
                 y: mouse_range1_y
                 z: 1
@@ -1864,20 +1862,20 @@ Window {
 
 
                 MouseArea {
-                    id: recB5But1Page2
-                    anchors.fill: recB5Rec1Page2
+                    id: recB12But1
+                    anchors.fill: recB12Rec1
                     onClicked: {
                         console.log("Button 2.3 clicked.");
                     }
                 }
 
                 Text {
-                    id: nameButton5Page2
-                    anchors.bottom: recB5Rec1Page2.bottom
+                    id: nameButton12
+                    anchors.bottom: recB12Rec1.bottom
                     anchors.bottomMargin: 10
-                    anchors.horizontalCenter: recB5Rec1Page2.horizontalCenter
+                    anchors.horizontalCenter: recB12Rec1.horizontalCenter
                     text: qsTr("СТАНДАРТ")
-                    color: (recB5But1Page2.pressed || recB5But2Page2.pressed || recB5But3Page2.pressed || recB5But4Page2.pressed || recB5But5Page2.pressed)
+                    color: (recB12But1.pressed || recB12But2.pressed || recB12But3.pressed || recB12But4.pressed || recB12But5.pressed)
                         ? "white"
                         : "#66B2CC"
                     font.family: "Helvetica"
@@ -1887,17 +1885,17 @@ Window {
                 }
 
                 DropShadow {
-                      id: shadowTextBut5Page2
+                      id: shadowTextBut12
                       visible: {
-                          if(recB5But1Page2.pressed || recB5But2Page2.pressed || recB5But3Page2.pressed || recB5But4Page2.pressed|| recB5But5Page2.pressed){
+                          if(recB12But1.pressed || recB12But2.pressed || recB12But3.pressed || recB12But4.pressed|| recB12But5.pressed){
                               return false
                           }
                           else {
                               return true
                           }
                       }
-                      anchors.fill: nameButton5Page2
-                      source: nameButton5Page2
+                      anchors.fill: nameButton12
+                      source: nameButton12
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -1906,9 +1904,9 @@ Window {
             }
 
             Rectangle {
-                id:recB5Rec2Page2
-                anchors.horizontalCenter: recB5Rec1Page2.horizontalCenter
-                anchors.bottom: recB5Rec1Page2.top
+                id:recB12Rec2
+                anchors.horizontalCenter: recB12Rec1.horizontalCenter
+                anchors.bottom: recB12Rec1.top
                 z: 1
                 width: mouse_range2_width
                 height: mouse_range2_height
@@ -1916,8 +1914,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB5But2Page2
-                    anchors.fill: recB5Rec2Page2
+                    id: recB12But2
+                    anchors.fill: recB12Rec2
                     onClicked: {
                         console.log("Button 2.3 clicked.");
                     }
@@ -1925,9 +1923,9 @@ Window {
             }
 
             Rectangle {
-                id:recB5Rec3Page2
-                anchors.horizontalCenter: recB5Rec1Page2.horizontalCenter
-                anchors.top: recB5Rec1Page2.bottom
+                id:recB12Rec3
+                anchors.horizontalCenter: recB12Rec1.horizontalCenter
+                anchors.top: recB12Rec1.bottom
                 z: 1
                 width: mouse_range3_width
                 height: mouse_range3_height
@@ -1935,8 +1933,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB5But3Page2
-                    anchors.fill: recB5Rec3Page2
+                    id: recB12But3
+                    anchors.fill: recB12Rec3
                     onClicked: {
                         console.log("Button 2.3 clicked.");
                     }
@@ -1944,9 +1942,9 @@ Window {
             }
 
             Rectangle {
-                id:recB5Rec4Page2
-                anchors.bottom: recB5Rec2Page2.top
-                anchors.horizontalCenter: recB5Rec2Page2.horizontalCenter
+                id:recB12Rec4
+                anchors.bottom: recB12Rec2.top
+                anchors.horizontalCenter: recB12Rec2.horizontalCenter
                 z: 1
                 width: mouse_range4_width
                 height: mouse_range4_height
@@ -1954,8 +1952,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB5But4Page2
-                    anchors.fill: recB5Rec4Page2
+                    id: recB12But4
+                    anchors.fill: recB12Rec4
                     onClicked: {
                         console.log("Button 2.3 clicked.");
                     }
@@ -1963,9 +1961,9 @@ Window {
             }
 
             Rectangle {
-                id:recB5Rec5Page2
-                anchors.top: recB5Rec3Page2.bottom
-                anchors.horizontalCenter: recB5Rec3Page2.horizontalCenter
+                id:recB12Rec5
+                anchors.top: recB12Rec3.bottom
+                anchors.horizontalCenter: recB12Rec3.horizontalCenter
                 z: 1
                 width: mouse_range5_width
                 height: mouse_range5_height
@@ -1973,8 +1971,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB5But5Page2
-                    anchors.fill: recB5Rec5Page2
+                    id: recB12But5
+                    anchors.fill: recB12Rec5
                     onClicked: {
                         console.log("Button 2.3 clicked.");
                     }
@@ -1984,7 +1982,7 @@ Window {
         }
 
         Rectangle {
-            id: recB7Page2
+            id: recB13
             width: buttons_width
             height: buttons_height
             color: "transparent"
@@ -1993,16 +1991,16 @@ Window {
             y: ((recBut67Y + shiftYPage2) - clearances)
             z: -1
             Image {
-                id: imBye7Page2
-                anchors.fill: recB7Page2
+                id: imBye13
+                anchors.fill: recB13
                 anchors.margins: 1
-                source: (recB7But1Page2.pressed || recB7But2Page2.pressed || recB7But3Page2.pressed || recB7But4Page2.pressed|| recB7But5Page2.pressed)
+                source: (recB13But1.pressed || recB13But2.pressed || recB13But3.pressed || recB13But4.pressed|| recB13But5.pressed)
                     ? "images/МЕНЮ Назад 2 страница2.png"
                     : "images/МЕНЮ Назад 2 страница.png"
             }
 
             Rectangle {
-                id:recB7Rec1Page2
+                id:recB13Rec1
                 x: mouse_range1_x
                 y: mouse_range1_y
                 z: 1
@@ -2012,8 +2010,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB7But1Page2
-                    anchors.fill: recB7Rec1Page2
+                    id: recB13But1
+                    anchors.fill: recB13Rec1
                     onClicked: {
                         console.log("2.4");
                         stack.pop(mainView);
@@ -2021,12 +2019,12 @@ Window {
                 }
 
                 Text {
-                    id: nameButton7Page2
-                    anchors.bottom: recB7Rec1Page2.bottom
+                    id: nameButton13
+                    anchors.bottom: recB13Rec1.bottom
                     anchors.bottomMargin: 11
-                    anchors.horizontalCenter: recB7Rec1Page2.horizontalCenter
+                    anchors.horizontalCenter: recB13Rec1.horizontalCenter
                     text: qsTr("НАЗАД")
-                    color: (recB7But1Page2.pressed || recB7But2Page2.pressed || recB7But3Page2.pressed || recB7But4Page2.pressed|| recB7But5Page2.pressed)
+                    color: (recB13But1.pressed || recB13But2.pressed || recB13But3.pressed || recB13But4.pressed|| recB13But5.pressed)
                     ? "white"
                     : "#979A9B"
                     font.family: "Helvetica"
@@ -2036,11 +2034,11 @@ Window {
                 }
 
                 DropShadow {
-                      id: shadowTextBut7Page2
-                      visible: (recB7But1Page2.pressed || recB7But2Page2.pressed || recB7But3Page2.pressed || recB7But4Page2.pressed|| recB7But5Page2.pressed)
+                      id: shadowTextBut13
+                      visible: (recB13But1.pressed || recB13But2.pressed || recB13But3.pressed || recB13But4.pressed|| recB13But5.pressed)
                            ? false : true
-                      anchors.fill: nameButton7Page2
-                      source: nameButton7Page2
+                      anchors.fill: nameButton13
+                      source: nameButton13
                       horizontalOffset: 2
                       color: "white"
                       radius: 0
@@ -2049,9 +2047,9 @@ Window {
             }
 
             Rectangle {
-                id:recB7Rec2Page2
-                anchors.horizontalCenter: recB7Rec1Page2.horizontalCenter
-                anchors.bottom: recB7Rec1Page2.top
+                id:recB13Rec2
+                anchors.horizontalCenter: recB13Rec1.horizontalCenter
+                anchors.bottom: recB13Rec1.top
                 z: 1
                 width: mouse_range2_width
                 height: mouse_range2_height
@@ -2059,8 +2057,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB7But2Page2
-                    anchors.fill: recB7Rec2Page2
+                    id: recB13But2
+                    anchors.fill: recB13Rec2
                     onClicked: {
                         console.log("Button 2.4 clicked.");
                         onClicked: stack.pop(mainView);
@@ -2069,9 +2067,9 @@ Window {
             }
 
             Rectangle {
-                id:recB7Rec3Page2
-                anchors.horizontalCenter: recB7Rec1Page2.horizontalCenter
-                anchors.top: recB7Rec1Page2.bottom
+                id:recB13Rec3
+                anchors.horizontalCenter: recB13Rec1.horizontalCenter
+                anchors.top: recB13Rec1.bottom
                 z: 1
                 width: mouse_range3_width
                 height: mouse_range3_height
@@ -2079,8 +2077,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB7But3Page2
-                    anchors.fill: recB7Rec3Page2
+                    id: recB13But3
+                    anchors.fill: recB13Rec3
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.4 clicked.");
@@ -2089,9 +2087,9 @@ Window {
             }
 
             Rectangle {
-                id:recB7Rec4Page2
-                anchors.bottom: recB7Rec2Page2.top
-                anchors.horizontalCenter: recB7Rec2Page2.horizontalCenter
+                id:recB13Rec4
+                anchors.bottom: recB13Rec2.top
+                anchors.horizontalCenter: recB13Rec2.horizontalCenter
                 z: 1
                 width: mouse_range4_width
                 height: mouse_range4_height
@@ -2099,8 +2097,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB7But4Page2
-                    anchors.fill: recB7Rec4Page2
+                    id: recB13But4
+                    anchors.fill: recB13Rec4
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.4 clicked.");
@@ -2109,9 +2107,9 @@ Window {
             }
 
             Rectangle {
-                id:recB7Rec5Page2
-                anchors.top: recB7Rec3Page2.bottom
-                anchors.horizontalCenter: recB7Rec3Page2.horizontalCenter
+                id:recB13Rec5
+                anchors.top: recB13Rec3.bottom
+                anchors.horizontalCenter: recB13Rec3.horizontalCenter
                 z: 1
                 width: mouse_range5_width
                 height: mouse_range5_height
@@ -2119,8 +2117,8 @@ Window {
                 border.color: rec_range_color()
 
                 MouseArea {
-                    id: recB7But5Page2
-                    anchors.fill: recB7Rec5Page2
+                    id: recB13But5
+                    anchors.fill: recB13Rec5
                     onClicked: {
                         onClicked: stack.pop(mainView);
                         console.log("Button 2.4 clicked.");
